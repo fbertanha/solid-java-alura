@@ -1,3 +1,5 @@
+package calculadora_salario;
+
 import java.util.Calendar;
 
 public class Funcionario {
@@ -7,35 +9,48 @@ public class Funcionario {
     private Cargo cargo;
     private Calendar dataDeAdmissao;
     private double salarioBase;
+
     public int getId() {
         return id;
     }
+
     public String getNome() {
         return nome;
     }
+
     public Cargo getCargo() {
         return cargo;
     }
+
     public Calendar getDataDeAdmissao() {
         return dataDeAdmissao;
     }
+
     public double getSalarioBase() {
         return salarioBase;
     }
+
     public void setId(int id) {
         this.id = id;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
+
     public void setCargo(Cargo cargo) {
         this.cargo = cargo;
     }
+
     public void setDataDeAdmissao(Calendar dataDeAdmissao) {
         this.dataDeAdmissao = dataDeAdmissao;
     }
+
     public void setSalarioBase(double salarioBase) {
         this.salarioBase = salarioBase;
     }
 
+    public double calculaSalario() {
+        return getCargo().getRegra().calcula(this);
+    }
 }
